@@ -23,7 +23,7 @@ const handleChange=(e)=>{
 
 const handleSubmit=(e)=>{
     e.preventDefault();
-    axios.post('http://localhost:5000/register',formData)
+    axios.post('https://test-exam-apis.onrender.com/register',formData)
     .then(res=>{
         navigate('/login')
         setLoading(true)

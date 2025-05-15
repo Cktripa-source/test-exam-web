@@ -20,7 +20,7 @@ const Books=()=>{
     });
     const [bookImage,setBookImage]=useState(null)
     useEffect(()=>{
-        axios.get('http://localhost:5000/getBooks')
+        axios.get('https://test-exam-apis.onrender.com/getBooks')
         .then((Response)=>{
             setBooks(Response.data);
         })
@@ -28,7 +28,7 @@ const Books=()=>{
          toast.success(error.response?.data?.message)
         });
 
-        axios.get("http://localhost:5000/getPublishers")
+        axios.get("https://test-exam-apis.onrender.com/getPublishers")
         .then(res=>{
            setSelectPub(res.data)
         })
@@ -36,7 +36,7 @@ const Books=()=>{
             toast.error(err.response?.data?.message)
         });
 
-        axios.get("http://localhost:5000/getSuppliers")
+        axios.get("https://test-exam-apis.onrender.com/getSuppliers")
         .then(res=>{
             setSelectSup(res.data)
          })
@@ -76,7 +76,7 @@ const Books=()=>{
 
 const handleSubmit = (e) =>{
     e.preventDefault();
-    axios.post('http://localhost:5000/addBook',data)
+    axios.post('https://test-exam-apis.onrender.com/addBook',data)
     .then(res=>{
         toast.success(res.data.message);
         setIsOpenForm(false)
@@ -163,7 +163,7 @@ const handleSubmit = (e) =>{
                             filteredBooks.map(book=>(
                                 <tr key={book.book_id} className="capitalize border-b">
                                     <td className="border-r p-2  text-center">
-                                        <img src={`http://localhost:5000/${book.image}`} alt="" className="h-16 w-16 m-auto" />
+                                        <img src={`https://test-exam-apis.onrender.com/${book.image}`} alt="" className="h-16 w-16 m-auto" />
                                     </td>
                                  <td className="border-r p-2  text-left">{book.title}</td>
                                  <td className="border-r p-2  text-left">{book.genre}</td>
@@ -210,7 +210,7 @@ const handleSubmit = (e) =>{
 
       <div className="flex flex-col md:flex-row gap-4">
         <img
-          src={`http://localhost:5000/${viewDetails.image}`}
+          src={`https://test-exam-apis.onrender.com/${viewDetails.image}`}
           alt=""
           className="w-full md:w-1/3 h-60 mt-auto object-cover rounded-lg border"
         />

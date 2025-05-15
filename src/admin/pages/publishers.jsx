@@ -14,7 +14,7 @@ const Publishers=()=>{
         contact:''
     })
     useEffect(()=>{
-        axios.get('http://localhost:5000/getPublishers')
+        axios.get('https://test-exam-apis.onrender.com/getPublishers')
         .then(res=>{
             setPublishers(res.data)
             console.log(res.data);
@@ -40,7 +40,7 @@ const Publishers=()=>{
     }
 const handleSubmit=(e)=>{
     e.preventDefault();
-    axios.post('http://localhost:5000/addPublisher',formData)
+    axios.post('https://test-exam-apis.onrender.com/addPublisher',formData)
     .then(res=>{
         toast.success(res.data.message);
         setIsOpenForm(false)

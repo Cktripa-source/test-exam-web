@@ -10,7 +10,7 @@ const Catalogs = () => {
 
   useEffect(() => {
     
-    axios.get('http://localhost:5000/getBooks')
+    axios.get('https://test-exam-apis.onrender.com/getBooks')
       .then(res => {
         setBooks(res.data);
         console.log(res.data);
@@ -31,7 +31,7 @@ const Catalogs = () => {
         return
     }
 
-    axios.post('http://localhost:5000/addBorrow', { book_id: bookId, member_id: userId })
+    axios.post('https://test-exam-apis.onrender.com/addBorrow', { book_id: bookId, member_id: userId })
         .then(() => {
             setBooks(books.map(book => 
                 book.id === bookId ? { ...book, status: 'borrowed' } : book
@@ -81,7 +81,7 @@ const Catalogs = () => {
               >
                 <div className="relative h-64 bg-gray-200">
                   <img
-                    src={`http://localhost:5000/${book.image}`} 
+                    src={`https://test-exam-apis.onrender.com/${book.image}`} 
                     alt={book.title}
                     className="w-full h-full object-cover"
                   />

@@ -14,7 +14,7 @@ const Borrows=()=>{
         contact:''
     })
     useEffect(()=>{
-        axios.get('http://localhost:5000/getBorrows')
+        axios.get('https://test-exam-apis.onrender.com/getBorrows')
         .then(res=>{
             setBorrows(res.data)
             console.log(res.data);
@@ -30,7 +30,7 @@ const Borrows=()=>{
         borrow.borrower_name.toLowerCase().includes(searchTerm.toLowerCase())
     )
     const handleMarkReturned = (id) => {
-        axios.put(`http://localhost:5000/updateBorrow/${id}`, { status: 'returned' })
+        axios.put(`https://test-exam-apis.onrender.com/updateBorrow/${id}`, { status: 'returned' })
           .then(res => {
             toast.success(res.data.message || 'Marked as Returned!');
             setBorrows(prev =>
@@ -44,7 +44,7 @@ const Borrows=()=>{
           });
       };
       const handleDelete = (id) => {
-        axios.delete(`http://localhost:5000/deleteBorrow/${id}`, { status: 'returned' })
+        axios.delete(`https://test-exam-apis.onrender.com/deleteBorrow/${id}`, { status: 'returned' })
           .then(res => {
             toast.success(res.data.message)
           })

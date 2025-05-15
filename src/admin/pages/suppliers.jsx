@@ -14,7 +14,7 @@ const Suppliers=()=>{
         contact:''
     })
     useEffect(()=>{
-        axios.get('http://localhost:5000/getSuppliers')
+        axios.get('https://test-exam-apis.onrender.com/getSuppliers')
         .then(res=>{
             setSuppliers(res.data)
             console.log(res.data);
@@ -40,7 +40,7 @@ const Suppliers=()=>{
     }
 const handleSubmit=(e)=>{
     e.preventDefault();
-    axios.post('http://localhost:5000/addSupplier',formData)
+    axios.post('https://test-exam-apis.onrender.com/addSupplier',formData)
     .then(res=>{
         toast.success(res.data.message);
         setIsOpenForm(false)
